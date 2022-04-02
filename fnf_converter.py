@@ -1,3 +1,5 @@
+""" Module which includes classes and functions needed to convert Friday Night Funkin' charts into .osz (osu mapsets). """
+
 from crash_window import Crash_window
 import json
 from math import log
@@ -826,6 +828,8 @@ class Osz_converter:
             if self.exporting_window != None and self.exporting_window.window != None:
                 self.exporting_window.finish(self.osz_path)  # function called for the GUI when export is complete
         
+        except SystemExit:  # don't call crash window whe the window is closed
+            pass
         except:
             error_window = Crash_window(traceback.format_exc())
             error_window.openWindow()
