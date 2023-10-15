@@ -185,7 +185,7 @@ class Exporting_window:
             # Create and init the window
             self.window = tk.Toplevel(self.master.window)
             self.window.title("Exporting as .osz...")
-            self.window.geometry("350x100")
+            self.window.geometry("403x115")  # exporting window
             self.window.resizable(width=False, height=False)  # the window can't be resized
 
             # widgets variables defined in __init__(), but defined here
@@ -465,7 +465,7 @@ class Main_window:
 
             # 1. Create and init the window
             self.window.title(app_name)  # set window title
-            self.window.geometry("808x538")  # set window size
+            self.window.geometry("930x620")  # set window size (main app)
             self.window.resizable(width=False, height=False)  # the window can't be resized
 
             # 2. Create and set the variables widgets
@@ -1011,7 +1011,7 @@ class New_difficulty_window:
             # Create and init the window
             self.window = tk.Toplevel(self.master.window)
             self.window.title("New difficulty")
-            self.window.geometry("350x255")
+            self.window.geometry("403x293")  # new difficulty window
 
             # widgets variables defined in __init__()
         
