@@ -710,7 +710,7 @@ class Osz_converter:
         """
             Class method:
                 Delete (or at least try) to delete the folder and the .osz generated during the conversion.
-            Argumnts:
+            Arguments:
                 None.
             Return:
                 Nothing.
@@ -838,7 +838,7 @@ class Osz_converter:
     def status(self, new_status):
         """
             Class Method:
-                Called seveal times during exportAsOsz() to update self.stringvar_status.
+                Called several times during exportAsOsz() to update self.stringvar_status.
             Arguments:
                 new_status (str): new text to display
             Return:
