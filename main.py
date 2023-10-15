@@ -465,7 +465,7 @@ class Main_window:
 
             # 1. Create and init the window
             self.window.title(app_name)  # set window title
-            self.window.geometry("930x620")  # set window size (main app)
+            self.window.geometry("937x620")  # set window size (main app)
             self.window.resizable(width=False, height=False)  # the window can't be resized
 
             # 2. Create and set the variables widgets
