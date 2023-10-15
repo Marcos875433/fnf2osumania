@@ -466,7 +466,6 @@ class Main_window:
             # 1. Create and init the window
             self.window.title(app_name)  # set window title
             self.window.geometry("937x620")  # set window size (main app)
-            self.window.resizable(width=False, height=False)  # the window can't be resized
 
             # 2. Create and set the variables widgets
             # set the variables
@@ -1105,10 +1104,28 @@ def setFilePath(string_var):
         string_var.set(no_selected_file_text)
     return selected_file
 
-# WHERE THE PROGRAM STARTS
+def main():
+    """ Where the program really starts starts. """
+    try:
+        if check_ffmpeg and not(detectFFMPEG()):  # ffmpeg not detected
+            ffmpeg_window = No_FFMPEG_window()
+            ffmpeg_window.openWindow()
+        
+        else:
+            os.makedirs("output", exist_ok=True)  # create output folder if not exists
+            root = Main_window()  # app window
+            root.openWindow()
+
+    except SystemExit:  # don't call error message when SystemExit is raised
+        pass
+
+    except:
+        error_window = Crash_window(traceback.format_exc())
+        error_window.openWindow()
+
+# WHERE THE PROGRAM STARTS :
 
 try:
-    
     os.makedirs("output", exist_ok=True)  # create output folder if not exists
     root = Main_window()  # app window
     root.openWindow()
@@ -1119,4 +1136,3 @@ except SystemExit:  # don't call error message when SystemExit is raised
 except:
     error_window = Crash_window(traceback.format_exc())
     error_window.openWindow()
-
