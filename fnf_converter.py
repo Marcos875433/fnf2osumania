@@ -523,6 +523,7 @@ class Fnf_chart:
                     notes_list.append(list(filter(lambda x: type(x) == int or type(x) == float, note)))
 
         notes_list.sort()  # sort the notes by chronological order
+        return notes_list
 
     def getNotesPlayer(self, player_id):
         """
